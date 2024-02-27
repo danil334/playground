@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, SafeAreaView, TouchableOpacity } from "react-native";
 
-const Screen = () => {
+const CounterScreen = () => {
     const [count, setCount] = useState(0);
     const onPressFunction = () => {
         setCount(count + 1);
@@ -20,4 +20,4 @@ const Screen = () => {
     );
 };
 
-export default Screen;
+export default CounterScreen;

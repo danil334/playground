@@ -1,8 +1,15 @@
 import React from "react";
-import Screen from "./components/CounterScreen";
+import CounterScreen from "./components/CounterScreen";
+import HomeScreen from "./components/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+
 
 const App = () => {
-    return <Screen />;
+    return (
+        <NavigationContainer>
+            <HomeScreen />
+        </NavigationContainer>
+    )
 };
 
 // This demo is using a external compiler that will only work in Expo Snacks.
