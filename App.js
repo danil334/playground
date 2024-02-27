@@ -1,10 +1,8 @@
 import React from "react";
-import Screen from "./components/Screen";
+import Screen from "./components/CounterScreen";
 
 const App = () => {
-    return (
-        <Screen />
-    );
+    return <Screen />;
 };
 
 // This demo is using a external compiler that will only work in Expo Snacks.

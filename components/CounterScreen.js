@@ -10,12 +10,12 @@ const Screen = () => {
     return (
         <SafeAreaView className="flex-1 flex-col bg-blue-500 justify-center items-center">
             <TouchableOpacity
-                className="h-12 w-32 bg-blue-800 justify-center items-center"
+                className="bg-blue-800 justify-center items-center"
                 onPress={onPressFunction}
             >
-                <Text>Press Me!</Text>
+                <Text className="pt-5 pb-5 pl-10 pr-10 text-2xl">Press Me!</Text>
             </TouchableOpacity>
-            <Text>{count}</Text>
+            <Text className="pt-4 text-5xl">{count}</Text>
         </SafeAreaView>
     );
 };
