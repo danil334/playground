@@ -2,42 +2,21 @@ import "react-native-gesture-handler";
 import React from "react";
 import CounterScreen from "./components/CounterScreen";
 import HomeScreen from "./components/HomeScreen";
+import Data from "./components/Data";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-const Tab = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 const App = () => {
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName="Home">
-                <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
-                    options={{
-                        tabBarIcon: ({ focused, size, color }) => {
-                            return (
-                                <Image
-                                    source={require("./assets/home.png")}
-                                    tintColor={focused ? "#f33abe" : "grey"}
-                                    style={{ height: 20, width: 20 }}
-                                />
-                            );
-                        },
-                        tabBarActiveTintColor: "#f33abe",
-                        headerShown: false,
-                    }}
-                />
-                <Tab.Screen
-                    name="Counter"
-                    component={CounterScreen}
-                    options={{
-                        tabBarActiveTintColor: "#f33abe",
-                        headerShown: false,
-                    }}
-                />
-            </Tab.Navigator>
+            <Drawer.Navigator initialRouteName="Data" screenOptions={{ drawerType: 'front', swipeEdgeWidth: 50 }}>
+                <Drawer.Screen name="Home" component={HomeScreen} />
+                <Drawer.Screen name="Counter" component={CounterScreen} />
+                <Drawer.Screen name="Data" component={Data} />
+            </Drawer.Navigator>
         </NavigationContainer>
     );
 };
